@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10131d"><title>QuizMaster — Play smarter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" id="brandHome"><span class="brand-mark">Q</span><span>quiz<span class="gold">master</span><small>THINK. PLAY. LEVEL UP.</small></span></a>
+    <nav><button class="nav-link active" data-view="home">Home</button><button class="nav-link" data-view="leaderboard">Leaderboard</button></nav>
+    <div class="top-tag"><span class="live-dot"></span> C-POWERED QUIZ</div>
+  </header>
+
+  <main>
+    <section id="homeView" class="view hero-layout">
+      <div class="hero-copy">
+        <h1>Think <br>it <em>through.</em></h1>
+        <p class="hero-sub">Choose your subject, trust your knowledge, and put it to the test.</p>
+        <div class="hero-actions"><button class="primary-btn" id="startBtn">Start a quiz <span>↗</span></button><button class="text-btn" id="leaderboardShortcut">View leaderboard <span>→</span></button></div>
+      </div>
+      <div class="hero-art">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="quiz-card-preview"><div class="preview-head"><span>QUICK CHALLENGE</span><span class="preview-dots">•••</span></div><div class="preview-number">01 <span>/ 10</span></div><div class="preview-question">How prepared <br>you really are<br><b>for that exam?</b></div><div class="preview-lines"><span></span><span></span><span></span></div><div class="preview-footer"><span>✧</span></div></div>
+      </div>
+    </section>
+
+    <section id="setupView" class="view narrow-view hidden">
+      <button class="back-btn" data-back="home">← Back</button>
+      <div class="section-kicker">LET'S GET STARTED</div><h2>START <em>quiz.</em></h2><p class="muted">A name, a topic, and you're in.</p>
+      <div class="panel setup-panel"><label for="playerName">YOUR NAME</label><input id="playerName" maxlength="32" placeholder="Enter your name" autocomplete="off"><label>CHOOSE YOUR CATEGORY</label>
+        <div class="category-grid"><button class="category-card selected" data-category="All"><span class="category-icon">✧</span><b>Surprise me</b><small>A little bit of everything</small></button><button class="category-card" data-category="Technology"><span class="category-icon">⌘</span><b>Technology</b><small>Digital world &amp; beyond</small></button><button class="category-card" data-category="Science"><span class="category-icon">⚛</span><b>Science</b><small>Discover how things work</small></button><button class="category-card" data-category="General Knowledge"><span class="category-icon">◎</span><b>General knowledge</b><small>What do you know?</small></button></div>
+        <button class="primary-btn full-btn" id="beginBtn">Let's play <span>↗</span></button><p class="form-error" id="setupError"></p>
+      </div>
+    </section>
+
+    <section id="quizView" class="view quiz-view hidden">
+      <div class="quiz-top"><button class="back-btn" id="quitBtn">← Quit quiz</button><div class="quiz-category" id="quizCategory">TECHNOLOGY</div><div class="player-pill"><span class="avatar" id="playerInitial">R</span><span id="quizPlayer">Player</span></div></div>
+      <div class="quiz-progress-wrap"><div class="progress-meta"><span id="questionCount">QUESTION 01 / 10</span><span id="progressPercent">10%</span></div><div class="progress-track"><div id="progressBar"></div></div></div>
+      <div class="question-area"><div class="question-label"><span class="tiny-star">✦</span> TAKE YOUR TIME</div><h2 id="questionText">Question goes here</h2><div class="answer-grid" id="answerGrid"></div><div class="quiz-bottom"><span id="difficultyLabel">EASY</span><button class="primary-btn" id="nextBtn" disabled>Next question <span>→</span></button></div></div>
+    </section>
+
+    <section id="resultView" class="view narrow-view hidden">
+      <div class="result-symbol">✦</div><div class="section-kicker">ROUND COMPLETE</div><h2 id="resultHeading">Nicely done.</h2><p class="muted" id="resultSub">Here's how you did.</p>
+      <div class="panel result-panel"><div class="score-ring" id="scoreRing"><div><strong id="scoreValue">0/10</strong><span>YOUR SCORE</span></div></div><div class="result-stats"><div><strong id="accuracyValue">0%</strong><span>ACCURACY</span></div><div><strong id="correctValue">0</strong><span>CORRECT</span></div><div><strong id="totalValue">10</strong><span>QUESTIONS</span></div></div><p class="save-note" id="saveNote">Your score has been saved to the leaderboard.</p></div>
+      <div class="result-actions"><button class="primary-btn" id="playAgainBtn">Play again <span>↗</span></button><button class="secondary-btn" data-view="leaderboard">See leaderboard</button></div>
+    </section>
+
+    <section id="leaderboardView" class="view narrow-view hidden">
+      <button class="back-btn" data-view="home">← Home</button><div class="section-kicker">THE HIGH SCORES</div><h2>Hall of <em>fame.</em></h2><p class="muted">A little friendly competition never hurt.</p>
+      <div class="panel leaderboard-panel"><div class="leaderboard-head"><span>PLAYER</span><span>CATEGORY</span><span>SCORE</span></div><div id="leaderboardRows"><div class="empty-state">No scores yet. Be the first to play!</div></div></div>
+      <button class="primary-btn full-btn" data-view="setup">Play a round <span>↗</span></button>
+    </section>
+  </main>
+  <footer><span>© 2026 QUIZMASTER</span><span>BUILT TO HELP YOU IMPROVE<b></b></span><span>POWERED BY C</span></footer>
+  <script src="app.js"></script>
+</body></html>
